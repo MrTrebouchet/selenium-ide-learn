@@ -1,0 +1,220 @@
+{
+  "id": "df043aad-cf96-434e-b2b8-b48d967f1b79",
+  "version": "2.0",
+  "name": "speedrun-test",
+  "url": "https://www.speedrun.com",
+  "tests": [{
+    "id": "09b03354-96f0-4cf0-9771-c95351532c26",
+    "name": "registration",
+    "commands": [{
+      "id": "2c0d8081-6731-4fbe-9492-2a94cc3fc3a0",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "0547cde7-55a7-4a7b-b3a4-fe03edc398e2",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=//header//button[contains(.,'Игры')]",
+      "targets": [
+        ["css=.hidden > a:nth-child(1) > .x-navbar-button", "css:finder"],
+        ["xpath=(//button[@type='button'])[2]", "xpath:attributes"],
+        ["xpath=//div[@id='app']/div/div/header/div/div[2]/div/a/button", "xpath:idRelative"],
+        ["xpath=//div[2]/div/a/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Игры')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "c320008d-71cd-420a-a14c-476c76038eca",
+      "comment": "",
+      "command": "executeScript",
+      "target": "return Math.floor(Math.random() * 5) +1",
+      "targets": [],
+      "value": "element_number"
+    }, {
+      "id": "d21fde8b-e929-4d2a-99e9-ccd5fffdabe9",
+      "comment": "",
+      "command": "echo",
+      "target": "${element_number}",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "3928082c-7797-4514-ac6f-5d4a613e1b8f",
+      "comment": "",
+      "command": "storeAttribute",
+      "target": "css=.x-gameview-grid button:nth-child(1) img@alt",
+      "targets": [],
+      "value": "img_name"
+    }, {
+      "id": "755ff7ec-699a-418d-b6c8-20d07cb2b634",
+      "comment": "",
+      "command": "echo",
+      "target": "${img_name}",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "ccbbe727-7688-42ec-995f-cb5937c823a9",
+      "comment": "",
+      "command": "storeText",
+      "target": "css=.x-gameview-grid button:nth-child(1) .relative a",
+      "targets": [],
+      "value": "game_title"
+    }, {
+      "id": "ce6c301b-8868-426e-a34e-877f1cf53b4f",
+      "comment": "",
+      "command": "echo",
+      "target": "${game_title}",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "5ff68569-01f5-4230-9a89-f403d7633aa6",
+      "comment": "",
+      "command": "assert",
+      "target": "img_name",
+      "targets": [],
+      "value": "${game_title}"
+    }, {
+      "id": "001709ec-aa89-478a-8fe8-9f342c58034a",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=//div/a[.='Случайная игра']",
+      "targets": [
+        ["css=.gap-x-1\\.5", "css:finder"],
+        ["xpath=//main[@id='app-main']/div[2]/div/div/div/nav/div/a/div", "xpath:idRelative"],
+        ["xpath=//nav/div/a/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "04bb7dfc-47fe-4676-ab4c-51f9a9b92260",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=//a[contains(@href, 'signup')]",
+      "targets": [
+        ["css=.bg-navbar-link", "css:finder"],
+        ["xpath=(//button[@type='button'])[10]", "xpath:attributes"],
+        ["xpath=//div[@id='app']/div/div/header/div/div[4]/div/a[2]/button", "xpath:idRelative"],
+        ["xpath=//div[4]/div/a[2]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Зарегистрироваться')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "b1df256b-45da-4d77-bebf-69de85e5ba8e",
+      "comment": "",
+      "command": "sendKeys",
+      "target": "name=name",
+      "targets": [],
+      "value": "test"
+    }, {
+      "id": "83ef2f97-ee0a-491c-b1b0-6e14a36fae2d",
+      "comment": "",
+      "command": "sendKeys",
+      "target": "name=email",
+      "targets": [
+        ["name=email", "name"],
+        ["css=.relative:nth-child(2) > .x-input-text", "css:finder"],
+        ["xpath=//input[@name='email']", "xpath:attributes"],
+        ["xpath=//main[@id='app-main']/div[2]/div/form/div/div/div/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "${KEY_TAB}"
+    }, {
+      "id": "32364ffa-f7e1-459b-81b0-cb88c5d08ead",
+      "comment": "",
+      "command": "sendKeys",
+      "target": "name=email",
+      "targets": [
+        ["name=email", "name"],
+        ["css=.relative:nth-child(2) > .x-input-text", "css:finder"],
+        ["xpath=//input[@name='email']", "xpath:attributes"],
+        ["xpath=//main[@id='app-main']/div[2]/div/form/div/div/div/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "test@mail.com"
+    }, {
+      "id": "364072fa-d61d-4484-9894-87459e4fd425",
+      "comment": "",
+      "command": "type",
+      "target": "name=password",
+      "targets": [
+        ["name=password", "name"],
+        ["css=.x-input-text:nth-child(3)", "css:finder"],
+        ["xpath=//input[@name='password']", "xpath:attributes"],
+        ["xpath=//main[@id='app-main']/div[2]/div/form/div/div/div/div[3]/input", "xpath:idRelative"],
+        ["xpath=//div[3]/input", "xpath:position"]
+      ],
+      "value": "testtesttesttet"
+    }, {
+      "id": "0b0b3bca-2409-40e8-b7ec-50d57f40ba4c",
+      "comment": "",
+      "command": "click",
+      "target": "css=#headlessui-listbox-button-\\3Arjs\\3A > .flex",
+      "targets": [
+        ["css=#headlessui-listbox-button-\\3Arjs\\3A > .flex", "css:finder"],
+        ["xpath=//button[@id='headlessui-listbox-button-:rjs:']/div", "xpath:idRelative"],
+        ["xpath=//div[4]/div/div/button/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "de381815-6936-4cd1-b945-d99550fbf392",
+      "comment": "",
+      "command": "waitForElementVisible",
+      "target": "css=.x-input-dropdown-options",
+      "targets": [
+        ["css=.x-input-dropdown-options", "css:finder"],
+        ["xpath=//main[@id='app-main']/div[2]/div/form/div/div/div/div[4]/div/div/div", "xpath:idRelative"],
+        ["xpath=//div[4]/div/div/div", "xpath:position"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "fb291044-ff8d-4605-b079-2455bde320be",
+      "comment": "",
+      "command": "click",
+      "target": "css=#x-input-dropdown-item-\\3Arjo\\3A-0 .x-inline-1",
+      "targets": [
+        ["css=#x-input-dropdown-item-\\3Arjo\\3A-0 .x-inline-1", "css:finder"],
+        ["xpath=//div[@id='x-input-dropdown-item-:rjo:-0']/div/div", "xpath:idRelative"],
+        ["xpath=//div[4]/div/div/div/div/div/div/div/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "23ab3803-d1ac-4a71-810b-1c535608ee8c",
+      "comment": "",
+      "command": "click",
+      "target": "css=button[type='submit']",
+      "targets": [
+        ["id=app-main", "id"],
+        ["css=#app-main", "css:finder"],
+        ["xpath=//main[@id='app-main']", "xpath:attributes"],
+        ["xpath=//div[@id='app']/div/main", "xpath:idRelative"],
+        ["xpath=//main", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "1aefa76e-2254-4811-a6b8-a4c48ac4a568",
+      "comment": "",
+      "command": "waitForElementVisible",
+      "target": "css=.ml-3 > .font-semibold",
+      "targets": [],
+      "value": "30000"
+    }, {
+      "id": "2c51eddf-0e4f-42fc-a7fc-95b6341bdded",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "css=.ml-3 > .font-semibold",
+      "targets": [],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "185d37f8-258b-4940-8a13-17949d2776d3",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["09b03354-96f0-4cf0-9771-c95351532c26"]
+  }],
+  "urls": ["https://www.speedrun.com/"],
+  "plugins": []
+}
