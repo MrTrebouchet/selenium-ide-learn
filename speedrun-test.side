@@ -166,7 +166,7 @@
         ["xpath=//main[@id='app-main']/div[2]/div/form/div/div/div/div[4]/div/div/div", "xpath:idRelative"],
         ["xpath=//div[4]/div/div/div", "xpath:position"]
       ],
-      "value": "30000"
+      "value": "25000"
     }, {
       "id": "fb291044-ff8d-4605-b079-2455bde320be",
       "comment": "",
