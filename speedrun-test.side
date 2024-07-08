@@ -197,7 +197,7 @@
       "command": "waitForElementVisible",
       "target": "css=.ml-3 > .font-semibold",
       "targets": [],
-      "value": "25000"
+      "value": "20000"
     }, {
       "id": "2c51eddf-0e4f-42fc-a7fc-95b6341bdded",
       "comment": "",
